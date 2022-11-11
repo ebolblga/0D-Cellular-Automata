@@ -86,12 +86,13 @@ function factorial(n: number): number {
 </script>
 <template>
     <div class="h-screen flex flex-row flex-wrap">
-        <div class="h-full w-[50vw] p-2">
+        <div class="h-full w-[50vw] p-2 overflow-auto">
             <p class="text-2xl font-bold">0D Cellular Automata (0D CA)</p>
             <p>Small website made to explore the smallest possible cell world.</p>
             <p class="mt-10">Just like <a class="underline" href="https://en.wikipedia.org/wiki/Elementary_cellular_automaton" target="_blank" rel="noopener noreferrer">1D ECA</a> where we stack 1D states of the world one after another, representing a temporal dimension, this will be stacking 0D worlds, creatings 1D image in the end.</p>
             <p class="mt-10">Select amount of states:</p>
             <select v-model="stateCount" class="w-full rounded-lg h-7 bg-[#f44e38] text-[#1d0f44] outline-none" @change="onChange()">
+                <option value="1">1</option>
                 <option value="2">2</option>
                 <!-- <option value="3">3</option>
                 <option value="4">4</option> -->
