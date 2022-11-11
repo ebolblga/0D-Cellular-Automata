@@ -14,14 +14,14 @@ export default defineNuxtConfig({
     viewer: true
   },
   publicRuntimeConfig: {
-    base: process.env.NODE_ENV == "production" ? "/0D-CA/" : "/"
+    base: process.env.NODE_ENV == "production" ? "/0D-Cellular-Automata/" : "/"
   },
   app: {
-    baseURL: process.env.NODE_ENV == "production" ? "/0D-CA" : "/",
+    baseURL: process.env.NODE_ENV == "production" ? "/0D-Cellular-Automata" : "/",
     buildAssetsDir: "/nuxt/",
-    cdnURL: "/0D-CA"
+    cdnURL: "/0D-Cellular-Automata"
   },
   router: {
-    base: process.env.NODE_ENV == "production" ? "/0D-CA/" : "/"
+    base: process.env.NODE_ENV == "production" ? "/0D-Cellular-Automata/" : "/"
   }
 })
