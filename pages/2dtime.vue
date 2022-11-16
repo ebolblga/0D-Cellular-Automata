@@ -266,6 +266,7 @@ async function onChange() {
             <NuxtLink to="/" title="Switch to 2 temporal dimensions." class="bg-[#f44e38] text-[#1d0f44] p-1 px-2 rounded-full font-bold active:bg-[#1d0f44] active:text-[#f44e38]" @click="">Switch to 1D time</NuxtLink>
             <p class="mt-10">Now that you familiar with 0+1D CA (meaning 0 spatial dimensions and 1 time dimension), it is time to play with 0+2D CA - 0 spatial dimensions and 2 time dimensions. One rule will act along -y axis, second one along the x axis and any point on the surface is basically a combination of going forward in one and another timeline. Here are the articles that inspired me:</p>
             <p><a class="underline" href="http://dmishin.blogspot.com/2014/06/cellular-automata-with-2-temporal.html?m=1" target="_blank" rel="noopener noreferrer">CELLULAR AUTOMATA WITH 2 TEMPORAL DIMENSIONS</a></p>
+            <p><a class="underline" href="https://optozorax.github.io/p/invertible-1d-automata/#2d-vremia" target="_blank" rel="noopener noreferrer">Properties of reversible 1D automata (RU)</a></p>
             <p><a class="underline" href="http://www.askamathematician.com/2012/06/q-what-would-the-universe-be-like-with-additional-temporal-dimensions/" target="_blank" rel="noopener noreferrer">What would the universe be like with additional temporal dimensions?</a></p>
             <p class="mt-10">Select amount of states:</p>
             <select v-model="stateCount" class="w-full rounded-lg h-7 bg-[#f44e38] text-[#1d0f44] outline-none" @change="onChange()">
