@@ -153,7 +153,8 @@ async function onChange() {
     <div class="h-screen flex flex-row flex-wrap">
         <div class="h-full w-[50vw] p-2 overflow-auto">
             <p class="text-2xl font-bold">0D Cellular Automata (0D CA)</p>
-            <p>Small website made to explore the smallest possible cell world.</p>
+            <p class="mb-3">Small website made to explore the smallest possible cell world.</p>
+            <NuxtLink to="/2dtime" title="Switch to 2 temporal dimensions." class="bg-[#f44e38] text-[#1d0f44] p-1 px-2 rounded-full font-bold active:bg-[#1d0f44] active:text-[#f44e38]" @click="">Switch to 2D time</NuxtLink>
             <p class="mt-10">Just like <a class="underline" href="https://en.wikipedia.org/wiki/Elementary_cellular_automaton" target="_blank" rel="noopener noreferrer">1D ECA</a> where we stack 1D states of the world one after another, representing a temporal dimension, this will be stacking 0D worlds, creatings 1D image in the end.</p>
             <p class="mt-10">Select amount of states:</p>
             <select v-model="stateCount" class="w-full rounded-lg h-7 bg-[#f44e38] text-[#1d0f44] outline-none" @change="onChange()">
@@ -168,14 +169,16 @@ async function onChange() {
             <p class="mt-10 text-lg">Properties:</p>
             <p>Lambda (λ) is a number between 0 and 1 that corresponds to how chaotic the system is with given rules. With λ = 0 the system is stable, nothing is happening, with λ = 1 the system is totally chaotic. Somewhere between those lambdas there is a region called <a class="underline" href="https://en.wikipedia.org/wiki/Edge_of_chaos" target="_blank" rel="noopener noreferrer">edge of chaos</a>. It is a place where the phase shift from order to disorder is happening - the only place where complex structures can exist.</p>
             <p>Interestingly, most of the rules are considered a reversible cellular automaton just like <a class="underline" href="https://en.wikipedia.org/wiki/Critters_(cellular_automaton)" target="_blank" rel="noopener noreferrer">Critters</a> for example. There is only one state that led to the current state and there is only one state that will be next. This also means that all rules are periodic, it's like doing the same moves to the rubrics cube over and over, after some time you will get back to the exact same state.</p>
+            <p>It is also interesting to imagine what creature living in 0D will see. As you probably know, it seems like a rule that <b>n</b> dimensional being has a vision in <b>n - 1</b>. So we see in 2D, Mario in 1D and 0D creature will see -1D...? Although we can only speculate if that is even possible or makes sense, there exists a name for such objects: <a class="underline" href="https://polytope.miraheze.org/wiki/Nullitope" target="_blank" rel="noopener noreferrer">nullitope</a>. 0D object - point, consists of infinitely many nullitopes. Nullitopes also have interesting properties, for example, they do not have coordinates.</p>
             <p><a class="underline text-xs" href="https://github.com/ebolblga/0D-Cellular-Automata" target="_blank" rel="noopener noreferrer">Source code</a></p>
             <button class="mt-10 bg-[#f44e38] text-[#1d0f44] p-1 px-2 rounded-full font-bold active:bg-[#1d0f44] active:text-[#f44e38]" @click="onChange()">Generate random world</button>
         </div>
         <div class="h-full w-[50vw] p-2 bg-[#f44e38] text-[#1d0f44] flex flex-row overflow-auto">
             <div v-for="(url, i) in ruleUrls"  class="min-w-[50px] h-full mr-3 text-center">
                 <p class="font-bold">Rule {{ i }}</p>
-                <p v-if="ruleCount != 1" class="font-bold mb-1 text-xs">λ = {{ Math.round((i / (ruleCount - 1)) * 100) / 100 }}</p>
-                <p v-else class="font-bold mb-1 text-xs">λ = 0</p>
+                <!-- <p v-if="ruleCount != 1" class="font-bold mb-1 text-xs">λ = {{ Math.round((i / (ruleCount - 1)) * 100) / 100 }}</p>
+                <p v-else class="font-bold mb-1 text-xs">λ = 0</p> -->
+                <p class="font-bold mb-1 text-xs">λ = 0</p>
                 <img :src="url" class="w-full" style="image-rendering: pixelated" />
             </div>
         </div>
